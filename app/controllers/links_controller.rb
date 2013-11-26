@@ -11,7 +11,8 @@ class LinksController < ApplicationController
   def new
     if params[:duplicate_id].present?
       # do a duplicate of this
-      @link = @category.links.find(params[:duplicate_id])
+      @duplicate_link = @category.links.find(params[:duplicate_id])
+      @link = @category.links.new(@duplicate_link.attributes)
     else
     	@link = @category.links.new
       # make a brand new one
