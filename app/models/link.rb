@@ -1,3 +1,5 @@
+require "obscenity/active_model"
+
 class Link < ActiveRecord::Base
 	# let's link up this model with the category
 	# create the association with the line below 
@@ -6,7 +8,10 @@ class Link < ActiveRecord::Base
 	# (we also have to link it in the other direction)
 
 	# add some validations
+
 	validates :name, presence: true
+	# for some reason doesn't work with obscenity filter
+	# validates :name, presence: true, obscenity: true
 	validates :url, presence: true, uniqueness: true 
 
 	# let's clean up the URLs to remove the http:// part and www when present
@@ -15,6 +20,6 @@ class Link < ActiveRecord::Base
 	end
 
 	# remove trailing slash
-	# url.gsub</\/\z/>
+	# url.gsub</\/\z/>, "")
 	#             ^here finds the slash and the z tells it to end
 end

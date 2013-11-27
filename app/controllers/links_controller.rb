@@ -4,7 +4,7 @@ class LinksController < ApplicationController
   before_action :get_category
 
   # before EDIT, UPDATE and DESTROY
-  before_action :get_link, only: [:edit, :destroy]
+  before_action :get_link, only: [:edit, :destroy, :update]
 
 
 

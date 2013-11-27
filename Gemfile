@@ -60,6 +60,7 @@ gem "activeadmin", github: "gregbell/active_admin"
 # because heroku asks for this get 
 gem "rails_12factor", group: :production
 
-
+# add obscenity filter
+gem "obscenity", group: :production
 
 
