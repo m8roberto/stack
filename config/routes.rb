@@ -13,7 +13,7 @@ Stack::Application.routes.draw do
 resources :categories do
 # our links live inside our categories
 # so make our URL structure match this
-  resources :links
+resources :links
 end
 
 
