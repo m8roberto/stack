@@ -9,4 +9,12 @@ class Link < ActiveRecord::Base
 	validates :name, presence: true
 	validates :url, presence: true, uniqueness: true 
 
+	# let's clean up the URLs to remove the http:// part and www when present
+	def nice_url
+		url.gsub("http://","").gsub("www.","")
+	end
+
+	# remove trailing slash
+	# url.gsub</\/\z/>
+	#             ^here finds the slash and the z tells it to end
 end
